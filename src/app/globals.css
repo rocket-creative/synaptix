@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/* Synaptix Design Tokens */
+:root {
+  /* Primary Colors */
+  --synaptix-bg: #0A0A0A;
+  --synaptix-card: #161616;
+  --synaptix-cyan: #0FBDD5;
+  --synaptix-blue: #0A3D62;
+  
+  /* Gray Scale */
+  --synaptix-gray-800: #1A1A1A;
+  --synaptix-gray-700: #262626;
+  --synaptix-gray-600: #404040;
+  --synaptix-gray-500: #525252;
+  --synaptix-gray-400: #737373;
+  
+  /* Semantic */
+  --synaptix-success: #00A896;
+  --synaptix-error: #EF4444;
+  
+  /* Typography */
+  --font-heading: "Bebas Neue", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  background-color: #0A0A0A;
+}
+
+body {
+  background-color: #0A0A0A;
+  color: #FFFFFF;
+  font-family: var(--font-body, "IBM Plex Sans", system-ui, sans-serif);
+  font-weight: 300;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+.font-heading {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  button {
+    @apply transition-all duration-200;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #161616;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #525252;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(15, 189, 213, 0.3);
+  color: #FFFFFF;
+}
+
+/* Focus Styles */
+*:focus-visible {
+  outline: 2px solid #0FBDD5;
+  outline-offset: 2px;
+}
