@@ -10,8 +10,12 @@ const navLinks = [
   { href: "#visits", label: "Visit Protocol" },
   { href: "#battery", label: "NPE Battery" },
   { href: "#faq", label: "FAQ" },
-  { href: "https://kronos-health.vercel.app?utm_source=synaptix&utm_medium=nav", label: "Kronos Health", external: true },
 ];
+
+const kronosHealthLink = {
+  href: "https://kronos-health.vercel.app?utm_source=synaptix&utm_medium=nav",
+  label: "Kronos Health",
+};
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,7 +75,6 @@ export function Nav() {
                 key={link.href}
                 href={link.href}
                 className="font-body text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors"
-                {...("external" in link && link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 {link.label}
               </Link>
@@ -79,6 +82,14 @@ export function Nav() {
             <span className="text-white/30 font-body text-xs" aria-hidden="true">
               |
             </span>
+            <a
+              href={kronosHealthLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors"
+            >
+              {kronosHealthLink.label}
+            </a>
           </div>
 
           <div className="hidden lg:flex items-center gap-4">
@@ -129,11 +140,19 @@ export function Nav() {
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className="font-heading text-2xl text-white hover:text-[#0FBDD5] transition-colors"
-                {...("external" in link && link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 {link.label}
               </Link>
             ))}
+            <a
+              href={kronosHealthLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="font-heading text-2xl text-white hover:text-[#0FBDD5] transition-colors"
+            >
+              {kronosHealthLink.label}
+            </a>
           </nav>
 
           <div className="mt-auto pt-8 border-t border-white/10">
