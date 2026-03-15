@@ -76,6 +76,9 @@ export function Nav() {
                 {link.label}
               </Link>
             ))}
+            <span className="text-white/30 font-body text-xs" aria-hidden="true">
+              |
+            </span>
           </div>
 
           <div className="hidden lg:flex items-center gap-4">
