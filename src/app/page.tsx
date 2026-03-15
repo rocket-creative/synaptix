@@ -100,7 +100,7 @@ const platformBenefits = [
 const faqItems = [
   {
     question: "What practices is Synaptix designed for?",
-    answer: "Synaptix is built for orthopedic surgery, neurosurgery, sports medicine, and dedicated concussion programs. Any practice managing post-concussion patients can benefit from the standardized protocol and longitudinal tracking.",
+    answer: "Synaptix is built for orthopedic surgery, neurosurgery, sports medicine, and dedicated concussion programs. Any practice managing post concussion patients can benefit from the standardized protocol and longitudinal tracking.",
   },
   {
     question: "How quickly can we deploy Synaptix?",
@@ -681,9 +681,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* E-E-A-T Trust Signal */}
+      {/* E-E-A-T Trust Signal + Medical Review */}
       <section className="py-6 sm:py-8 bg-[#0A0A0A] border-t border-white/5">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          <div className="p-4 sm:p-6 bg-[#161616] border-l-2 border-[#0FBDD5]/50">
+            <p className="font-body text-[10px] sm:text-xs text-white/60 font-light leading-relaxed">
+              <span className="bg-yellow-100 dark:bg-yellow-900/40">Medical review: This content has been reviewed by a board certified neurosurgeon for clinical accuracy. Synaptix is a clinical support tool and does not replace professional medical judgment. All treatment decisions remain the responsibility of the treating provider.</span>
+            </p>
+          </div>
           <TrustSignal 
             author="Dr. John M. Abrahams, M.D."
             credentials="Board-Certified Neurosurgeon"

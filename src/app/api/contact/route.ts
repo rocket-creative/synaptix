@@ -15,12 +15,6 @@ export async function POST(request: Request) {
     const body = await request.json();
     const validatedData = contactSchema.parse(body);
 
-    // Log the submission (in production, send to email service like Resend)
-    console.log("Demo request received:", {
-      ...validatedData,
-      timestamp: new Date().toISOString(),
-    });
-
     // TODO: Integrate with Resend or other email service
     // const { data, error } = await resend.emails.send({
     //   from: 'Synaptix <noreply@synaptix.vercel.app>',
@@ -41,7 +35,6 @@ export async function POST(request: Request) {
       );
     }
 
-    console.error("Contact form error:", error);
     return NextResponse.json(
       { success: false, message: "An error occurred" },
       { status: 500 }

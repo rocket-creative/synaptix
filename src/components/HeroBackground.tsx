@@ -3,6 +3,11 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
+function prefersReducedMotion(): boolean {
+  if (typeof window === "undefined") return false;
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
 interface Particle {
   x: number;
   y: number;
@@ -36,6 +41,8 @@ export function HeroBackground({
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
+    if (prefersReducedMotion()) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, IBM_Plex_Sans, Open_Sans } from "next/font/google";
 import "./globals.css";
-import { Nav, Footer, CookieConsent } from "@/components";
+import { Nav, Footer, CookieConsent, MobileStickyCTA } from "@/components";
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
@@ -24,38 +24,33 @@ const openSans = Open_Sans({
   display: "swap",
 });
 
+const SITE_URL = "https://synaptix.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://synaptix.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Synaptix — Concussion Assessment & Recovery Platform",
+    default: "Concussion Management Software for Clinics | Synaptix",
     template: "%s | Synaptix",
   },
   description:
-    "Structured concussion management software for orthopedic, neurosurgery, and sports medicine practices. 12-week program with NPE-CX battery, cognitive remediation, and digital monitoring.",
-  keywords: [
-    "concussion management",
-    "concussion software",
-    "neuropsychological testing",
-    "cognitive remediation",
-    "sports medicine",
-    "TBI assessment",
-    "concussion recovery",
-    "NPE-CX battery",
-  ],
+    "Structured concussion management software for orthopedic, neurosurgery, and sports medicine. NPE-CX battery, cognitive remediation, digital monitoring. Request a demo.",
   authors: [{ name: "Kronos Health" }],
   creator: "Kronos Health",
   publisher: "Kronos Health",
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://synaptix.vercel.app",
+    url: SITE_URL,
     siteName: "Synaptix",
-    title: "Synaptix — Concussion Assessment & Recovery Platform",
+    title: "Concussion Management Software for Clinics | Synaptix",
     description:
-      "Structured concussion management software with NPE-CX battery, cognitive remediation, and digital monitoring.",
+      "Structured concussion management software for orthopedic, neurosurgery, and sports medicine. NPE-CX battery, cognitive remediation, digital monitoring. Request a demo.",
     images: [
       {
-        url: "/synaptix-og.jpg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Synaptix Concussion Management Platform",
@@ -64,10 +59,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Synaptix — Concussion Assessment & Recovery Platform",
+    title: "Concussion Management Software for Clinics | Synaptix",
     description:
-      "Structured concussion management software with NPE-CX battery, cognitive remediation, and digital monitoring.",
-    images: ["/synaptix-og.jpg"],
+      "Structured concussion management software for orthopedic, neurosurgery, and sports medicine. NPE-CX battery, cognitive remediation, digital monitoring. Request a demo.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
@@ -92,7 +87,7 @@ export default function RootLayout({
       lang="en"
       className={`${bebasNeue.variable} ${ibmPlexSans.variable} ${openSans.variable}`}
     >
-      <body className="min-h-screen bg-[#0A0A0A] text-white antialiased">
+      <body className="min-h-screen bg-[#0A0A0A] text-white antialiased pb-20 md:pb-0">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#161616] focus:px-4 focus:py-2 focus:text-white focus:shadow-lg"
@@ -102,6 +97,7 @@ export default function RootLayout({
         <Nav />
         <main id="main">{children}</main>
         <Footer />
+        <MobileStickyCTA />
         <CookieConsent />
       </body>
     </html>

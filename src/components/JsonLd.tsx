@@ -1,3 +1,7 @@
+const SITE_URL = "https://synaptix.vercel.app";
+const ORG_ID = `${SITE_URL}/#organization`;
+const WEBSITE_ID = `${SITE_URL}/#website`;
+
 interface FAQItem {
   question: string;
   answer: string;
@@ -7,9 +11,10 @@ export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": ORG_ID,
     name: "Synaptix",
-    url: "https://synaptix.vercel.app",
-    logo: "https://synaptix.vercel.app/synaptix-logo-white.svg",
+    url: SITE_URL,
+    logo: `${SITE_URL}/synaptix-logo-white.svg`,
     description:
       "Concussion Assessment & Recovery Platform providing structured management software for orthopedic, neurosurgery, and sports medicine practices.",
     parentOrganization: {
@@ -19,7 +24,7 @@ export function OrganizationSchema() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1-914-705-6830",
+      telephone: "(914) 705 6830",
       contactType: "sales",
       availableLanguage: "English",
     },
@@ -38,15 +43,12 @@ export function WebSiteSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": WEBSITE_ID,
     name: "Synaptix",
-    url: "https://synaptix.vercel.app",
+    url: SITE_URL,
     description:
       "Concussion Assessment & Recovery Platform. Structured, standardized, recurring.",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://synaptix.vercel.app/search?q={search_term_string}",
-      "query-input": "required name=search_term_string",
-    },
+    publisher: { "@id": ORG_ID },
   };
 
   return (
@@ -61,6 +63,7 @@ export function SoftwareApplicationSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": `${SITE_URL}/#software`,
     name: "Synaptix",
     applicationCategory: "HealthApplication",
     operatingSystem: "Web",
@@ -86,11 +89,7 @@ export function SoftwareApplicationSchema() {
       "HIPAA compliant",
       "Automated clinical reports",
     ],
-    provider: {
-      "@type": "Organization",
-      name: "Synaptix",
-      url: "https://synaptix.vercel.app",
-    },
+    provider: { "@id": ORG_ID },
   };
 
   return (
@@ -105,6 +104,7 @@ export function FAQSchema({ questions }: { questions: FAQItem[] }) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": `${SITE_URL}/#faq`,
     mainEntity: questions.map((q) => ({
       "@type": "Question",
       name: q.question,
@@ -131,12 +131,13 @@ export function BreadcrumbSchema({
   const schema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${SITE_URL}/#breadcrumb`,
     itemListElement: [
       {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://synaptix.vercel.app",
+        item: SITE_URL,
       },
       ...items.map((item, index) => ({
         "@type": "ListItem",
@@ -167,14 +168,11 @@ export function ServiceSchema({
   const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${SITE_URL}/#service`,
     name,
     description,
     url,
-    provider: {
-      "@type": "Organization",
-      name: "Synaptix",
-      url: "https://synaptix.vercel.app",
-    },
+    provider: { "@id": ORG_ID },
     areaServed: "United States",
     serviceType: "Concussion Management Software",
   };

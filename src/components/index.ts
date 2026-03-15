@@ -3,6 +3,7 @@ export { Footer } from "./Footer";
 export { HeroBackground } from "./HeroBackground";
 export { DemoRequestForm } from "./DemoRequestForm";
 export { CookieConsent } from "./CookieConsent";
+export { MobileStickyCTA } from "./MobileStickyCTA";
 export {
   OrganizationSchema,
   WebSiteSchema,

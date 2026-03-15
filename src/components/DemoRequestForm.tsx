@@ -27,6 +27,7 @@ export function DemoRequestForm() {
     message: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -61,6 +62,7 @@ export function DemoRequestForm() {
     if (!validateForm()) return;
 
     setIsSubmitting(true);
+    setSubmitError(null);
 
     try {
       const response = await fetch("/api/contact", {
@@ -80,7 +82,7 @@ export function DemoRequestForm() {
         });
       }
     } catch {
-      console.error("Form submission error");
+      setSubmitError("Something went wrong. Please try again or call (914) 705 6830.");
     } finally {
       setIsSubmitting(false);
     }
@@ -122,7 +124,7 @@ export function DemoRequestForm() {
       </h3>
 
       <div>
-        <label htmlFor="name" className="sr-only">
+        <label htmlFor="name" className="block font-body text-[10px] sm:text-xs text-[#0A0A0A]/70 font-light mb-1">
           Full Name
         </label>
         <input
@@ -146,7 +148,7 @@ export function DemoRequestForm() {
       </div>
 
       <div>
-        <label htmlFor="email" className="sr-only">
+        <label htmlFor="email" className="block font-body text-[10px] sm:text-xs text-[#0A0A0A]/70 font-light mb-1">
           Work Email
         </label>
         <input
@@ -170,7 +172,7 @@ export function DemoRequestForm() {
       </div>
 
       <div>
-        <label htmlFor="practice" className="sr-only">
+        <label htmlFor="practice" className="block font-body text-[10px] sm:text-xs text-[#0A0A0A]/70 font-light mb-1">
           Practice Name
         </label>
         <input
@@ -194,7 +196,7 @@ export function DemoRequestForm() {
       </div>
 
       <div>
-        <label htmlFor="specialty" className="sr-only">
+        <label htmlFor="specialty" className="block font-body text-[10px] sm:text-xs text-[#0A0A0A]/70 font-light mb-1">
           Specialty
         </label>
         <select
@@ -228,7 +230,7 @@ export function DemoRequestForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="sr-only">
+        <label htmlFor="message" className="block font-body text-[10px] sm:text-xs text-[#0A0A0A]/70 font-light mb-1">
           Message (Optional)
         </label>
         <textarea
@@ -242,6 +244,11 @@ export function DemoRequestForm() {
         />
       </div>
 
+      {submitError && (
+        <p className="text-red-700 text-xs" role="alert">
+          {submitError}
+        </p>
+      )}
       <button
         type="submit"
         disabled={isSubmitting}

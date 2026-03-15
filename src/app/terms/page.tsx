@@ -2,12 +2,37 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbSchema } from "@/components";
 
+const SITE_URL = "https://synaptix.vercel.app";
+
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Synaptix terms of service. Review the terms and conditions for using our concussion management platform.",
+    "Terms of service for Synaptix concussion management platform. Review our terms and conditions. Contact (914) 705 6830 for questions.",
   alternates: {
-    canonical: "https://synaptix.vercel.app/terms",
+    canonical: `${SITE_URL}/terms`,
+  },
+  openGraph: {
+    title: "Terms of Service | Synaptix",
+    description:
+      "Terms of service for Synaptix concussion management platform. Review our terms and conditions.",
+    url: `${SITE_URL}/terms`,
+    siteName: "Synaptix",
+    type: "website",
+    images: [
+      {
+        url: `${SITE_URL}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: "Synaptix Concussion Management Platform",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service | Synaptix",
+    description:
+      "Terms of service for Synaptix concussion management platform. Review our terms and conditions.",
+    images: [`${SITE_URL}/opengraph-image`],
   },
 };
 
@@ -20,6 +45,19 @@ export default function TermsPage() {
 
       <div className="min-h-screen bg-[#0A0A0A] pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <nav aria-label="Breadcrumb" className="mb-6">
+            <ol className="flex items-center gap-2 font-body text-xs text-white/60 font-light">
+              <li>
+                <Link href="/" className="hover:text-[#0FBDD5] transition-colors">
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li className="text-white/80" aria-current="page">
+                Terms of Service
+              </li>
+            </ol>
+          </nav>
           <article className="bg-[#161616] p-8 sm:p-12 border border-white/5">
             <header className="mb-8 pb-8 border-b border-white/10">
               <h1 className="font-heading text-3xl sm:text-4xl text-white mb-4">
