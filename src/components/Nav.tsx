@@ -10,7 +10,7 @@ const navLinks = [
   { href: "#visits", label: "Visit Protocol" },
   { href: "#battery", label: "NPE Battery" },
   { href: "#faq", label: "FAQ" },
-  { href: "https://kronoshealth.co?utm_source=synaptix&utm_medium=nav", label: "Kronos Health", external: true },
+  { href: "https://kronos-health.vercel.app?utm_source=synaptix&utm_medium=nav", label: "Kronos Health", external: true },
 ];
 
 export function Nav() {

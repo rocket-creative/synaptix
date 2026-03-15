@@ -10,9 +10,9 @@ const footerLinks = {
     { label: "FAQ", href: "#faq" },
   ],
   company: [
-    { label: "Kronos Health", href: "https://kronoshealth.co?utm_source=synaptix&utm_medium=footer" },
+    { label: "Kronos Health", href: "https://kronos-health.vercel.app?utm_source=synaptix&utm_medium=footer" },
     { label: "CognificaAI", href: "https://cognificaai.vercel.app?utm_source=synaptix&utm_medium=footer" },
-    { label: "Revenue Cycle", href: "https://kronoshealth.co/revenue-cycle?utm_source=synaptix&utm_medium=footer" },
+    { label: "Revenue Cycle", href: "https://kronos-health.vercel.app/revenue-cycle?utm_source=synaptix&utm_medium=footer" },
     { label: "Contact", href: "#demo" },
   ],
   legal: [
@@ -122,7 +122,7 @@ export function Footer() {
             <p className="font-body text-xs text-white/40">
               © {currentYear} Synaptix. A{" "}
               <Link 
-                href="https://kronoshealth.co?utm_source=synaptix&utm_medium=footer_copyright" 
+                href="https://kronos-health.vercel.app?utm_source=synaptix&utm_medium=footer_copyright" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-[#0FBDD5]/70 hover:text-[#0FBDD5] transition-colors"
