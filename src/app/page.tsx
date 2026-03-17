@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useHeroAnimation, useStaggeredCards, useSectionReveal } from "@/components/animations";
 import { 
   DemoRequestForm, 
   TrustSignal,
@@ -133,6 +135,10 @@ const faqItems = [
 ];
 
 export default function HomePage() {
+  const heroRef = useHeroAnimation();
+  const visitsRef = useStaggeredCards();
+  const practiceRef = useSectionReveal();
+
   return (
     <>
       {/* Schema Markup */}
@@ -147,7 +153,8 @@ export default function HomePage() {
       <FAQSchema questions={faqItems} />
 
       {/* Hero Section */}
-      <section 
+      <section
+        ref={heroRef}
         className="relative min-h-[80vh] sm:min-h-dvh bg-[#0A0A0A] overflow-hidden pt-safe-top"
         aria-labelledby="synaptix-hero-heading"
       >
@@ -156,11 +163,11 @@ export default function HomePage() {
         <div className="relative z-10 min-h-[80vh] sm:min-h-dvh flex items-center">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-0">
             <div className="backdrop-blur-md bg-black/40 border border-white/10 p-8 sm:p-10 lg:p-14 max-w-xl">
-              <p className="text-xs tracking-widest uppercase text-white/50 mb-4 sm:mb-6">
+              <p data-hero-eyebrow className="text-xs tracking-widest uppercase text-white/50 mb-4 sm:mb-6">
                 Concussion Management Software
               </p>
               
-              <div className="mb-6 sm:mb-8">
+              <div data-hero-image className="mb-6 sm:mb-8">
                 <Image
                   src="/synaptix-logo-white.svg"
                   alt="Synaptix Cognitive Software"
@@ -171,22 +178,23 @@ export default function HomePage() {
                 />
               </div>
               
-              <h1 
+              <h1
+                data-hero-title
                 id="synaptix-hero-heading"
                 className="font-heading text-2xl sm:text-3xl lg:text-4xl text-white leading-tight mb-4"
               >
                 Concussion Assessment & Recovery Platform
               </h1>
 
-              <p className="font-body text-sm sm:text-base text-white/70 font-light leading-relaxed mb-4">
+              <p data-hero-description className="font-body text-sm sm:text-base text-white/70 font-light leading-relaxed mb-4">
                 Streamlining concussion care with precision and intelligence. A comprehensive management system combining clinical history, neurological examination protocols, and advanced neuropsychological testing.
               </p>
 
-              <p className="font-body text-xs text-[#0FBDD5] font-light leading-relaxed mb-6 sm:mb-8">
+              <p data-hero-subtitle className="font-body text-xs text-[#0FBDD5] font-light leading-relaxed mb-6 sm:mb-8">
                 Built for sports medicine, orthopedics, neurology, and concussion programs. Structured, standardized, recurring.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div data-hero-cta className="flex flex-col sm:flex-row gap-3">
                 <a
                   href="#demo"
                   className="inline-flex items-center justify-center gap-4 bg-[#0FBDD5] text-[#0A0A0A] py-3 sm:py-4 px-6 sm:px-8 uppercase tracking-widest text-xs font-light hover:gap-6 transition-all w-full sm:w-fit focus:outline-none focus:ring-2 focus:ring-[#0FBDD5] focus:ring-offset-2 focus:ring-offset-black/40"
@@ -231,7 +239,8 @@ export default function HomePage() {
       </section>
 
       {/* Visit Types */}
-      <section 
+      <section
+        ref={visitsRef}
         className="py-12 sm:py-16 lg:py-24 bg-[#1A1A1A]" 
         id="visits"
         aria-labelledby="visits-heading"
@@ -254,7 +263,8 @@ export default function HomePage() {
 
           <div className="space-y-8 sm:space-y-10 lg:space-y-12">
             {visitTypes.map((visit, idx) => (
-              <article 
+              <article
+                data-stagger-card
                 key={visit.id} 
                 className="bg-[#262626] p-6 sm:p-8 lg:p-10 border-l-4 border-[#0FBDD5] hover:bg-[#404040] transition-colors"
                 aria-labelledby={`visit-${visit.id}-title`}
@@ -375,14 +385,15 @@ export default function HomePage() {
       </section>
 
       {/* Target Practices + Values */}
-      <section 
+      <section
+        ref={practiceRef}
         className="py-12 sm:py-16 lg:py-24 bg-[#0A0A0A]"
         aria-labelledby="practices-heading"
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
             <div>
-              <p className="text-xs tracking-widest uppercase text-white/40 mb-4">
+              <p data-section-header className="text-xs tracking-widest uppercase text-white/40 mb-4">
                 Built For
               </p>
               <h2 

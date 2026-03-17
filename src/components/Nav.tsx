@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ArrowRight } from "lucide-react";
+import { useNavScrollEffect, useMobileMenuAnimation } from "@/components/animations";
 
 const navLinks = [
   { href: "#program", label: "Program" },
@@ -19,16 +20,9 @@ const kronosHealthLink = {
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const navRef = useNavScrollEffect();
+  useMobileMenuAnimation(isOpen, mobileMenuRef);
 
   useEffect(() => {
     if (isOpen) {
@@ -53,11 +47,8 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-safe-top ${
-        isScrolled
-          ? "bg-[#0A0A0A]/95 backdrop-blur-md border-b border-white/5"
-          : "bg-transparent"
-      }`}
+      ref={navRef}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-safe-top bg-[#0A0A0A]/90 backdrop-blur-md"
     >
       <nav
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
@@ -136,6 +127,7 @@ export function Nav() {
       </nav>
 
       <div
+        ref={mobileMenuRef}
         id="mobile-menu"
         className={`lg:hidden fixed inset-0 top-16 sm:top-20 bg-[#0A0A0A] z-40 transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "translate-x-full"

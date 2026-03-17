@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, IBM_Plex_Sans, Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Nav, Footer, CookieConsent, MobileStickyCTA } from "@/components";
+import { PageTransition } from "@/components/animations";
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
@@ -101,7 +102,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <Nav />
-        <main id="main">{children}</main>
+        <main id="main"><PageTransition>{children}</PageTransition></main>
         <Footer />
         <MobileStickyCTA />
         <CookieConsent />
