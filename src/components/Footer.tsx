@@ -11,7 +11,7 @@ const footerLinks = {
   ],
   company: [
     { label: "Kronos Group", href: "https://kronos-health.vercel.app?utm_source=synaptix&utm_medium=footer" },
-    { label: "Cognifica App", href: "https://cognificaai.vercel.app?utm_source=synaptix&utm_medium=footer" },
+    { label: "Cognifica App", href: "https://cognificaapp.vercel.app?utm_source=synaptix&utm_medium=footer" },
     { label: "Revenue Cycle", href: "https://kronos-health.vercel.app/revenue-cycle?utm_source=synaptix&utm_medium=footer" },
     { label: "Contact", href: "#demo" },
   ],
