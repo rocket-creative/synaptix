@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bebas_Neue, IBM_Plex_Sans, Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Nav, Footer, CookieConsent, MobileStickyCTA } from "@/components";
@@ -26,6 +26,12 @@ const openSans = Open_Sans({
 
 const SITE_URL = "https://synaptix.vercel.app";
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -34,9 +40,9 @@ export const metadata: Metadata = {
   },
   description:
     "Structured concussion management software for orthopedic, neurosurgery, and sports medicine. NPE-CX battery, cognitive remediation, digital monitoring. Request a demo.",
-  authors: [{ name: "Kronos Health" }],
-  creator: "Kronos Health",
-  publisher: "Kronos Health",
+  authors: [{ name: "Kronos Group" }],
+  creator: "Kronos Group",
+  publisher: "Kronos Group",
   alternates: {
     canonical: SITE_URL,
   },
@@ -87,7 +93,7 @@ export default function RootLayout({
       lang="en"
       className={`${bebasNeue.variable} ${ibmPlexSans.variable} ${openSans.variable}`}
     >
-      <body className="min-h-screen bg-[#0A0A0A] text-white antialiased pb-20 md:pb-0">
+      <body className="min-h-dvh bg-[#0A0A0A] text-white antialiased pb-20 md:pb-0">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#161616] focus:px-4 focus:py-2 focus:text-white focus:shadow-lg"

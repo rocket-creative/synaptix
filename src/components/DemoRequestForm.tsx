@@ -134,9 +134,12 @@ export function DemoRequestForm() {
           value={formData.name}
           onChange={handleChange}
           placeholder="Full Name"
-          className={`w-full bg-[#0A0A0A]/20 border ${
+          inputMode="text"
+          autoComplete="name"
+          style={{ fontSize: '16px' }}
+          className={`w-full h-12 bg-[#0A0A0A]/20 border ${
             errors.name ? "border-red-400" : "border-[#0A0A0A]/30"
-          } px-4 py-3 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 text-sm font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors`}
+          } px-4 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors`}
           aria-invalid={!!errors.name}
           aria-describedby={errors.name ? "name-error" : undefined}
         />
@@ -158,9 +161,12 @@ export function DemoRequestForm() {
           value={formData.email}
           onChange={handleChange}
           placeholder="Work Email"
-          className={`w-full bg-[#0A0A0A]/20 border ${
+          inputMode="email"
+          autoComplete="email"
+          style={{ fontSize: '16px' }}
+          className={`w-full h-12 bg-[#0A0A0A]/20 border ${
             errors.email ? "border-red-400" : "border-[#0A0A0A]/30"
-          } px-4 py-3 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 text-sm font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors`}
+          } px-4 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors`}
           aria-invalid={!!errors.email}
           aria-describedby={errors.email ? "email-error" : undefined}
         />
@@ -182,9 +188,12 @@ export function DemoRequestForm() {
           value={formData.practice}
           onChange={handleChange}
           placeholder="Practice Name"
-          className={`w-full bg-[#0A0A0A]/20 border ${
+          inputMode="text"
+          autoComplete="organization"
+          style={{ fontSize: '16px' }}
+          className={`w-full h-12 bg-[#0A0A0A]/20 border ${
             errors.practice ? "border-red-400" : "border-[#0A0A0A]/30"
-          } px-4 py-3 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 text-sm font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors`}
+          } px-4 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors`}
           aria-invalid={!!errors.practice}
           aria-describedby={errors.practice ? "practice-error" : undefined}
         />
@@ -204,9 +213,10 @@ export function DemoRequestForm() {
           name="specialty"
           value={formData.specialty}
           onChange={handleChange}
-          className={`w-full bg-[#0A0A0A]/20 border ${
+          style={{ fontSize: '16px' }}
+          className={`w-full h-12 bg-[#0A0A0A]/20 border ${
             errors.specialty ? "border-red-400" : "border-[#0A0A0A]/30"
-          } px-4 py-3 text-[#0A0A0A] text-sm font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors appearance-none cursor-pointer ${
+          } px-4 text-[#0A0A0A] font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors appearance-none cursor-pointer ${
             !formData.specialty ? "text-[#0A0A0A]/50" : ""
           }`}
           aria-invalid={!!errors.specialty}
@@ -240,7 +250,8 @@ export function DemoRequestForm() {
           onChange={handleChange}
           placeholder="Tell us about your practice (optional)"
           rows={3}
-          className="w-full bg-[#0A0A0A]/20 border border-[#0A0A0A]/30 px-4 py-3 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 text-sm font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors resize-none"
+          style={{ fontSize: '16px' }}
+          className="w-full bg-[#0A0A0A]/20 border border-[#0A0A0A]/30 px-4 py-3 text-[#0A0A0A] placeholder:text-[#0A0A0A]/50 font-body font-light focus:outline-none focus:border-[#0A0A0A]/60 transition-colors resize-none"
         />
       </div>
 
@@ -252,7 +263,7 @@ export function DemoRequestForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#0A0A0A] text-white py-4 px-8 text-[11px] tracking-widest uppercase font-light hover:bg-[#0A0A0A]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+        className="w-full min-h-[44px] bg-[#0A0A0A] text-white py-4 px-8 text-[11px] tracking-widest uppercase font-light hover:bg-[#0A0A0A]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
       >
         {isSubmitting ? (
           <>

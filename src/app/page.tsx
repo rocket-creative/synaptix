@@ -148,12 +148,12 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section 
-        className="relative min-h-[80vh] sm:min-h-screen bg-[#0A0A0A] overflow-hidden"
+        className="relative min-h-[80vh] sm:min-h-dvh bg-[#0A0A0A] overflow-hidden pt-safe-top"
         aria-labelledby="synaptix-hero-heading"
       >
         <HeroBackground color="15, 189, 213" />
 
-        <div className="relative z-10 min-h-[80vh] sm:min-h-screen flex items-center">
+        <div className="relative z-10 min-h-[80vh] sm:min-h-dvh flex items-center">
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-0">
             <div className="backdrop-blur-md bg-black/40 border border-white/10 p-8 sm:p-10 lg:p-14 max-w-xl">
               <p className="text-xs tracking-widest uppercase text-white/50 mb-4 sm:mb-6">
@@ -453,7 +453,7 @@ export default function HomePage() {
             </p>
           </header>
 
-          <div className="grid sm:grid-cols-3 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
             <article className="bg-[#0A0A0A] p-4 sm:p-6 border-t-2 border-[#0FBDD5] hover:bg-[#0A0A0A]/80 transition-colors">
               <div className="flex items-center gap-2 mb-4">
                 <Clock className="w-4 h-4 text-[#0FBDD5]" aria-hidden="true" />
@@ -686,7 +686,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="p-4 sm:p-6 bg-[#161616] border-l-2 border-[#0FBDD5]/50">
             <p className="font-body text-[10px] sm:text-xs text-white/60 font-light leading-relaxed">
-              <span className="bg-yellow-100 dark:bg-yellow-900/40">Medical review: This content has been reviewed by a board certified neurosurgeon for clinical accuracy. Synaptix is a clinical support tool and does not replace professional medical judgment. All treatment decisions remain the responsibility of the treating provider.</span>
+              Medical review: This content has been reviewed by a board certified neurosurgeon for clinical accuracy. Synaptix is a clinical support tool and does not replace professional medical judgment. All treatment decisions remain the responsibility of the treating provider.
             </p>
           </div>
           <TrustSignal 

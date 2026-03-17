@@ -43,7 +43,7 @@ export default function PrivacyPage() {
         items={[{ name: "Privacy Policy", url: "https://synaptix.vercel.app/privacy" }]}
       />
 
-      <div className="min-h-screen bg-[#0A0A0A] pt-24 pb-16">
+      <div className="min-h-dvh bg-[#0A0A0A] pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex items-center gap-2 font-body text-xs text-white/60 font-light">
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
                   Introduction
                 </h2>
                 <p className="font-body text-sm text-white/70 font-light leading-relaxed mb-4">
-                  Synaptix (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), a Kronos Health
+                  Synaptix (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), a Kronos Group
                   company, is committed to protecting your privacy. This Privacy
                   Policy explains how we collect, use, disclose, and safeguard
                   your information when you use our concussion management platform.
@@ -183,11 +183,17 @@ export default function PrivacyPage() {
                 </p>
                 <div className="mt-4 p-4 bg-[#0A0A0A] border border-white/10">
                   <p className="font-body text-sm text-white/70">
-                    Synaptix (A Kronos Health Company)
+                    Synaptix (A Kronos Group Company)
                     <br />
                     Email: privacy@kronoshealth.co
                     <br />
-                    Phone: (914) 705 6830
+                    Phone:{" "}
+                    <a
+                      href="tel:+19147056830"
+                      className="hover:text-white transition-colors"
+                    >
+                      (914) 705 6830
+                    </a>
                   </p>
                 </div>
               </section>

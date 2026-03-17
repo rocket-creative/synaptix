@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 export function MobileStickyCTA() {
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#161616]/98 backdrop-blur-sm border-t border-white/10 px-4 py-3"
+      className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#161616]/98 backdrop-blur-sm border-t border-white/10 px-4 py-3 pb-safe-bottom"
       aria-label="Quick actions"
     >
       <div className="flex items-center justify-center gap-3 max-w-lg mx-auto">

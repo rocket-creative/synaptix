@@ -19,7 +19,7 @@ export function OrganizationSchema() {
       "Concussion Assessment & Recovery Platform providing structured management software for orthopedic, neurosurgery, and sports medicine practices.",
     parentOrganization: {
       "@type": "Organization",
-      name: "Kronos Health",
+      name: "Kronos Group",
       url: "https://kronoshealth.co",
     },
     contactPoint: {

@@ -14,7 +14,7 @@ const navLinks = [
 
 const kronosHealthLink = {
   href: "https://kronos-health.vercel.app?utm_source=synaptix&utm_medium=nav",
-  label: "Kronos Health",
+  label: "Kronos Group",
 };
 
 export function Nav() {
@@ -41,9 +41,19 @@ export function Nav() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-safe-top ${
         isScrolled
           ? "bg-[#0A0A0A]/95 backdrop-blur-md border-b border-white/5"
           : "bg-transparent"
@@ -111,7 +121,7 @@ export function Nav() {
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 -mr-2 text-white"
+            className="lg:hidden p-2 -mr-2 text-white min-h-[44px] min-w-[44px] flex items-center justify-center"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -133,13 +143,13 @@ export function Nav() {
         aria-hidden={!isOpen}
       >
         <div className="flex flex-col h-full px-6 py-8">
-          <nav className="flex flex-col gap-6">
+          <nav className="flex flex-col gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="font-heading text-2xl text-white hover:text-[#0FBDD5] transition-colors"
+                className="font-heading text-2xl text-white hover:text-[#0FBDD5] transition-colors min-h-[44px] flex items-center"
               >
                 {link.label}
               </Link>
@@ -149,7 +159,7 @@ export function Nav() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
-              className="font-heading text-2xl text-white hover:text-[#0FBDD5] transition-colors"
+              className="font-heading text-2xl text-white hover:text-[#0FBDD5] transition-colors min-h-[44px] flex items-center"
             >
               {kronosHealthLink.label}
             </a>

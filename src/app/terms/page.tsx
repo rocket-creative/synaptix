@@ -43,7 +43,7 @@ export default function TermsPage() {
         items={[{ name: "Terms of Service", url: "https://synaptix.vercel.app/terms" }]}
       />
 
-      <div className="min-h-screen bg-[#0A0A0A] pt-24 pb-16">
+      <div className="min-h-dvh bg-[#0A0A0A] pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav aria-label="Breadcrumb" className="mb-6">
             <ol className="flex items-center gap-2 font-body text-xs text-white/60 font-light">
@@ -151,7 +151,7 @@ export default function TermsPage() {
                 </h2>
                 <p className="font-body text-sm text-white/70 font-light leading-relaxed mb-4">
                   The Platform, including its content, features, and
-                  functionality, is owned by Kronos Health and is protected by
+                  functionality, is owned by Kronos Group and is protected by
                   copyright, trademark, and other intellectual property laws.
                   You may not copy, modify, distribute, or create derivative
                   works without our express written permission.
@@ -163,7 +163,7 @@ export default function TermsPage() {
                   Limitation of Liability
                 </h2>
                 <p className="font-body text-sm text-white/70 font-light leading-relaxed mb-4">
-                  To the maximum extent permitted by law, Kronos Health and its
+                  To the maximum extent permitted by law, Kronos Group and its
                   affiliates shall not be liable for any indirect, incidental,
                   special, consequential, or punitive damages arising from your
                   use of the Platform. Our total liability shall not exceed the
@@ -217,11 +217,17 @@ export default function TermsPage() {
                 </p>
                 <div className="mt-4 p-4 bg-[#0A0A0A] border border-white/10">
                   <p className="font-body text-sm text-white/70">
-                    Synaptix (A Kronos Health Company)
+                    Synaptix (A Kronos Group Company)
                     <br />
                     Email: legal@kronoshealth.co
                     <br />
-                    Phone: (914) 705 6830
+                    Phone:{" "}
+                    <a
+                      href="tel:+19147056830"
+                      className="hover:text-white transition-colors"
+                    >
+                      (914) 705 6830
+                    </a>
                   </p>
                 </div>
               </section>
