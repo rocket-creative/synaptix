@@ -108,10 +108,10 @@ export function DemoRequestForm() {
           aria-hidden="true"
         />
         <h3 className="font-heading text-xl text-[#0A0A0A] mb-2">
-          Thank You
+          You&apos;re on the list
         </h3>
         <p className="font-body text-sm text-[#0A0A0A]/70 font-light">
-          We&apos;ll be in touch within one business day to schedule your demo.
+          We&apos;ll be in touch within one business day about beta access for your practice.
         </p>
       </div>
     );
@@ -120,7 +120,7 @@ export function DemoRequestForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
       <h3 className="font-heading text-lg text-[#0A0A0A] mb-4">
-        Request a Demo
+        Request Beta Access
       </h3>
 
       <div>
@@ -272,7 +272,7 @@ export function DemoRequestForm() {
           </>
         ) : (
           <>
-            Request Demo
+            Request Beta Access
             <ArrowRight className="w-3 h-3" aria-hidden="true" />
           </>
         )}
