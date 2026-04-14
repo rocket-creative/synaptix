@@ -9,6 +9,15 @@ const footerLinks = {
     { label: "NPE Battery", href: "#battery" },
     { label: "FAQ", href: "#faq" },
   ],
+  clinical: [
+    { label: "Get Evaluated", href: "/get-evaluated" },
+    { label: "Workers' Comp", href: "/workers-comp" },
+    { label: "For Attorneys", href: "/for-attorneys" },
+  ],
+  software: [
+    { label: "License Software", href: "/license-software" },
+    { label: "For Hospitals & Insurers", href: "/for-hospitals-and-insurers" },
+  ],
   company: [
     { label: "Kronos Group", href: "https://kronos-health.vercel.app?utm_source=synaptix&utm_medium=footer" },
     { label: "Cognifica App", href: "https://cognificaai.vercel.app?utm_source=synaptix&utm_medium=footer" },
@@ -34,8 +43,9 @@ export function Footer() {
       </h2>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-          <div className="lg:col-span-1">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-10">
+          {/* Brand */}
+          <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <Link href="/" aria-label="Synaptix Home">
               <Image
                 src="/synaptix-logo-white.svg"
@@ -59,17 +69,13 @@ export function Footer() {
             </div>
           </div>
 
+          {/* Product */}
           <div>
-            <h3 className="text-xs tracking-widest uppercase text-white/40 mb-4">
-              Product
-            </h3>
+            <h3 className="text-xs tracking-widest uppercase text-white/40 mb-4">Product</h3>
             <ul className="space-y-3" role="list">
               {footerLinks.product.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="font-body text-sm text-white/60 hover:text-white transition-colors"
-                  >
+                  <Link href={link.href} className="font-body text-sm text-white/60 hover:text-white transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -77,11 +83,34 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Clinical */}
           <div>
-            <h3 className="text-xs tracking-widest uppercase text-white/40 mb-4">
-              Company
-            </h3>
+            <h3 className="text-xs tracking-widest uppercase text-white/40 mb-4">Clinical</h3>
             <ul className="space-y-3" role="list">
+              {footerLinks.clinical.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="font-body text-sm text-white/60 hover:text-white transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h3 className="text-xs tracking-widest uppercase text-white/40 mt-6 mb-4">Software</h3>
+            <ul className="space-y-3" role="list">
+              {footerLinks.software.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="font-body text-sm text-white/60 hover:text-white transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company + CTA */}
+          <div className="col-span-2 md:col-span-1 lg:col-span-2">
+            <h3 className="text-xs tracking-widest uppercase text-white/40 mb-4">Company</h3>
+            <ul className="space-y-3 mb-8" role="list">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
                   <Link
@@ -96,15 +125,6 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div>
-            <h3 className="text-xs tracking-widest uppercase text-white/40 mb-4">
-              Get Started
-            </h3>
-            <p className="font-body text-sm text-white/50 font-light mb-4">
-              See how Synaptix can standardize your concussion program.
-            </p>
             <Link
               href="#demo"
               className="inline-flex items-center gap-3 bg-[#0FBDD5] text-[#0A0A0A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:gap-5 transition-all"

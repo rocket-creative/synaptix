@@ -13,6 +13,17 @@ const navLinks = [
   { href: "#faq", label: "FAQ" },
 ];
 
+const clinicalLinks = [
+  { href: "/get-evaluated", label: "Get Evaluated" },
+  { href: "/workers-comp", label: "Workers' Comp" },
+  { href: "/for-attorneys", label: "For Attorneys" },
+];
+
+const softwareLinks = [
+  { href: "/license-software", label: "License Software" },
+  { href: "/for-hospitals-and-insurers", label: "For Hospitals" },
+];
+
 const kronosHealthLink = {
   href: "https://kronos-health.vercel.app?utm_source=synaptix&utm_medium=nav",
   label: "Kronos Group",
@@ -70,7 +81,7 @@ export function Nav() {
             />
           </Link>
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -80,9 +91,27 @@ export function Nav() {
                 {link.label}
               </Link>
             ))}
-            <span className="text-white/30 font-body text-xs" aria-hidden="true">
-              |
-            </span>
+            <span className="text-white/20 font-body text-xs" aria-hidden="true">|</span>
+            {clinicalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="font-body text-xs tracking-widest uppercase text-white/60 hover:text-synaptix-cyan transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <span className="text-white/20 font-body text-xs" aria-hidden="true">|</span>
+            {softwareLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="font-body text-xs tracking-widest uppercase text-white/60 hover:text-synaptix-cyan transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <span className="text-white/20 font-body text-xs" aria-hidden="true">|</span>
             <a
               href={kronosHealthLink.href}
               target="_blank"
@@ -135,7 +164,7 @@ export function Nav() {
         aria-hidden={!isOpen}
       >
         <div className="flex flex-col h-full px-6 py-8">
-          <nav className="flex flex-col gap-2">
+          <nav className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -146,12 +175,34 @@ export function Nav() {
                 {link.label}
               </Link>
             ))}
+            <p className="font-body text-[10px] text-white/30 uppercase tracking-widest mt-4 mb-1">Clinical</p>
+            {clinicalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="font-heading text-xl text-white/80 hover:text-[#0FBDD5] transition-colors min-h-[44px] flex items-center"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <p className="font-body text-[10px] text-white/30 uppercase tracking-widest mt-4 mb-1">Software</p>
+            {softwareLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="font-heading text-xl text-white/80 hover:text-[#0FBDD5] transition-colors min-h-[44px] flex items-center"
+              >
+                {link.label}
+              </Link>
+            ))}
             <a
               href={kronosHealthLink.href}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
-              className="font-heading text-2xl text-white hover:text-[#0FBDD5] transition-colors min-h-[44px] flex items-center"
+              className="font-heading text-xl text-white/50 hover:text-[#0FBDD5] transition-colors min-h-[44px] flex items-center mt-4 border-t border-white/10 pt-4"
             >
               {kronosHealthLink.label}
             </a>
