@@ -61,6 +61,54 @@ export function Nav() {
       ref={navRef}
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-safe-top bg-[#0A0A0A]/90 backdrop-blur-md"
     >
+      {/* Top bar — secondary links */}
+      <div className="hidden lg:block border-b border-white/10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-9">
+            <div className="flex items-center gap-5">
+              <span className="font-body text-[10px] tracking-widest uppercase text-white/30">Clinical</span>
+              {clinicalLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="font-body text-[10px] tracking-widest uppercase text-white/50 hover:text-[#0FBDD5] transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <span className="text-white/20" aria-hidden="true">|</span>
+              <span className="font-body text-[10px] tracking-widest uppercase text-white/30">Software</span>
+              {softwareLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="font-body text-[10px] tracking-widest uppercase text-white/50 hover:text-[#0FBDD5] transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <div className="flex items-center gap-5">
+              <a
+                href={kronosHealthLink.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-body text-[10px] tracking-widest uppercase text-white/50 hover:text-white transition-colors"
+              >
+                {kronosHealthLink.label}
+              </a>
+              <Link
+                href="tel:+19147056830"
+                className="font-body text-[10px] tracking-wider text-white/50 hover:text-white transition-colors"
+              >
+                (914) 705 6830
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main nav row */}
       <nav
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
         aria-label="Main navigation"
@@ -91,44 +139,9 @@ export function Nav() {
                 {link.label}
               </Link>
             ))}
-            <span className="text-white/20 font-body text-xs" aria-hidden="true">|</span>
-            {clinicalLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="font-body text-xs tracking-widest uppercase text-white/60 hover:text-synaptix-cyan transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <span className="text-white/20 font-body text-xs" aria-hidden="true">|</span>
-            {softwareLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="font-body text-xs tracking-widest uppercase text-white/60 hover:text-synaptix-cyan transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <span className="text-white/20 font-body text-xs" aria-hidden="true">|</span>
-            <a
-              href={kronosHealthLink.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-body text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors"
-            >
-              {kronosHealthLink.label}
-            </a>
           </div>
 
-          <div className="hidden lg:flex items-center gap-4">
-            <Link
-              href="tel:+19147056830"
-              className="font-body text-xs tracking-wider text-white/60 hover:text-white transition-colors"
-            >
-              (914) 705 6830
-            </Link>
+          <div className="hidden lg:flex items-center">
             <Link
               href="#demo"
               className="inline-flex items-center gap-3 bg-[#0FBDD5] text-[#0A0A0A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:gap-5 transition-all"
