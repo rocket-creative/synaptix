@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { useNavScrollEffect, useMobileMenuAnimation } from "@/components/animations";
 
 const navLinks = [
@@ -61,11 +61,64 @@ export function Nav() {
       ref={navRef}
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-safe-top bg-[#0A0A0A]/90 backdrop-blur-md"
     >
+      {/* ── Row 1: secondary nav (desktop only) ── */}
+      <div className="hidden lg:block border-b border-white/[0.08]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-9">
+
+          {/* Left — Clinical + Software links */}
+          <div className="flex items-center gap-4">
+            <span className="font-body text-[9px] tracking-widest uppercase text-white/25 select-none">Clinical</span>
+            {clinicalLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="font-body text-[9px] tracking-widest uppercase text-white/45 hover:text-[#0FBDD5] transition-colors whitespace-nowrap"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <span className="text-white/15 text-[9px] select-none" aria-hidden="true">|</span>
+            <span className="font-body text-[9px] tracking-widest uppercase text-white/25 select-none">Software</span>
+            {softwareLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="font-body text-[9px] tracking-widest uppercase text-white/45 hover:text-[#0FBDD5] transition-colors whitespace-nowrap"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Right — Kronos + phone */}
+          <div className="flex items-center gap-4">
+            <a
+              href={kronosHealthLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body text-[9px] tracking-widest uppercase text-white/45 hover:text-white/80 transition-colors whitespace-nowrap"
+            >
+              {kronosHealthLink.label}
+            </a>
+            <span className="text-white/15 text-[9px] select-none" aria-hidden="true">|</span>
+            <Link
+              href="tel:+19147056830"
+              className="font-body text-[9px] tracking-wider text-white/45 hover:text-white transition-colors whitespace-nowrap"
+            >
+              (914) 705 6830
+            </Link>
+          </div>
+
+        </div>
+      </div>
+
+      {/* ── Row 2: main nav ── */}
       <nav
         className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
         aria-label="Main navigation"
       >
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-16 sm:h-18 lg:h-16">
+
           {/* Logo */}
           <Link
             href="/"
@@ -77,98 +130,36 @@ export function Nav() {
               alt="Synaptix"
               width={140}
               height={40}
-              className="h-8 sm:h-10 w-auto"
+              className="h-7 sm:h-9 w-auto"
               priority
             />
           </Link>
 
-          {/* Desktop links */}
-          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+          {/* Center — program links (desktop) */}
+          <div className="hidden lg:flex items-center gap-7 xl:gap-9">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="font-body text-xs tracking-widest uppercase text-white/60 hover:text-white transition-colors"
+                className="font-body text-[11px] tracking-widest uppercase text-white/60 hover:text-white transition-colors whitespace-nowrap"
               >
                 {link.label}
               </Link>
             ))}
-
-            <span className="text-white/20 text-xs" aria-hidden="true">|</span>
-
-            {/* Clinical dropdown */}
-            <div className="relative group">
-              <button
-                className="flex items-center gap-1 font-body text-xs tracking-widest uppercase text-white/60 hover:text-[#0FBDD5] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0FBDD5]"
-                aria-haspopup="true"
-              >
-                Clinical
-                <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" aria-hidden="true" />
-              </button>
-              <div className="absolute top-full left-0 mt-2 w-48 bg-[#161616] border border-white/10 py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
-                {clinicalLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="block px-4 py-2.5 font-body text-xs tracking-wider uppercase text-white/60 hover:text-[#0FBDD5] hover:bg-white/5 transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Software dropdown */}
-            <div className="relative group">
-              <button
-                className="flex items-center gap-1 font-body text-xs tracking-widest uppercase text-white/60 hover:text-[#0FBDD5] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0FBDD5]"
-                aria-haspopup="true"
-              >
-                Software
-                <ChevronDown className="w-3 h-3 transition-transform duration-200 group-hover:rotate-180" aria-hidden="true" />
-              </button>
-              <div className="absolute top-full left-0 mt-2 w-52 bg-[#161616] border border-white/10 py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150 z-50">
-                {softwareLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="block px-4 py-2.5 font-body text-xs tracking-wider uppercase text-white/60 hover:text-[#0FBDD5] hover:bg-white/5 transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <span className="text-white/20 text-xs" aria-hidden="true">|</span>
-
-            <a
-              href={kronosHealthLink.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-body text-xs tracking-widest uppercase text-white/40 hover:text-white/70 transition-colors"
-            >
-              {kronosHealthLink.label}
-            </a>
           </div>
 
-          {/* Right — phone + CTA */}
-          <div className="hidden lg:flex items-center gap-5">
-            <Link
-              href="tel:+19147056830"
-              className="font-body text-xs tracking-wider text-white/40 hover:text-white transition-colors"
-            >
-              (914) 705 6830
-            </Link>
+          {/* Right — CTA (desktop) */}
+          <div className="hidden lg:flex items-center">
             <Link
               href="#demo"
-              className="inline-flex items-center gap-3 bg-[#0FBDD5] text-[#0A0A0A] py-3 px-6 text-[10px] tracking-widest uppercase font-light hover:gap-5 transition-all"
+              className="inline-flex items-center gap-3 bg-[#0FBDD5] text-[#0A0A0A] py-2.5 px-5 text-[10px] tracking-widest uppercase font-light hover:gap-5 transition-all whitespace-nowrap"
             >
               Request Demo
               <ArrowRight className="w-3 h-3" aria-hidden="true" />
             </Link>
           </div>
 
+          {/* Mobile hamburger */}
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
