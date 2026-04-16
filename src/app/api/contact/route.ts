@@ -325,14 +325,19 @@ export async function POST(request: Request) {
       replyTo = p.data.email;
     }
 
+    const toEmail = process.env.CONTACT_EMAIL ?? "info@kronoshealth.co";
     const resend = new Resend(apiKey);
-    await resend.emails.send({
+    const { error: sendError } = await resend.emails.send({
       from: "Synaptix <noreply@synaptix.health>",
-      to: ["info@synaptix.health"],
+      to: [toEmail],
       replyTo,
       subject: emailPayload.subject,
       text: emailPayload.text,
     });
+
+    if (sendError) {
+      return NextResponse.json({ error: "Email send failed" }, { status: 500 });
+    }
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch {
