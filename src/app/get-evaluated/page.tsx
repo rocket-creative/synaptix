@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Schedule a structured concussion evaluation with Synaptix. Telehealth and in-person options in NY. Work-related, auto accident, sports, and general cases accepted.",
   alternates: {
-    canonical: "https://synaptix.health/get-evaluated",
+    canonical: "https://www.synaptix.health/get-evaluated",
   },
   openGraph: {
     title: "Get a Concussion Evaluation | Synaptix",
     description:
       "Schedule a structured concussion evaluation. Telehealth and in-person NY. Work-related, auto accident, sports, and general cases.",
-    url: "https://synaptix.health/get-evaluated",
+    url: "https://www.synaptix.health/get-evaluated",
     siteName: "Synaptix",
     type: "website",
   },
@@ -35,7 +35,7 @@ const TRUST_ITEMS = [
 export default function GetEvaluatedPage() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Get Evaluated", url: "https://synaptix.health/get-evaluated" }]} />
+      <BreadcrumbSchema items={[{ name: "Get Evaluated", url: "https://www.synaptix.health/get-evaluated" }]} />
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           {/* Left */}

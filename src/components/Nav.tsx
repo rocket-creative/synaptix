@@ -25,7 +25,7 @@ const softwareLinks = [
 ];
 
 const kronosHealthLink = {
-  href: "https://kronos-health.vercel.app?utm_source=synaptix&utm_medium=nav",
+  href: "https://www.kronosgroup.health?utm_source=synaptix&utm_medium=nav",
   label: "Kronos Group",
 };
 

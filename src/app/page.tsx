@@ -148,7 +148,7 @@ export default function HomePage() {
       <ServiceSchema
         name="Synaptix Concussion Management Platform"
         description="Comprehensive concussion assessment and recovery software with neuropsychological testing, cognitive remediation therapy, and digital monitoring for medical practices."
-        url="https://synaptix.vercel.app"
+        url="https://www.synaptix.health"
       />
       <FAQSchema questions={faqItems} />
 

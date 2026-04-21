@@ -260,7 +260,7 @@ function buildLegacyDemoEmail(d: z.infer<typeof LegacyDemoSchema>) {
     subject: `[Synaptix] Beta Access Request — ${specialtyLabel} — ${d.name}`,
     text: [
       header("Demo / Beta Access Request"),
-      `\nSITE:       synaptix.health`,
+      `\nSITE:       www.synaptix.health`,
       `SUBMITTED:  ${ts()}\n`,
       DIV, "CONTACT DETAILS", DIV,
       `Name:         ${d.name}`,

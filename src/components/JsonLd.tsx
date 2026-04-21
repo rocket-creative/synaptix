@@ -1,4 +1,4 @@
-const SITE_URL = "https://synaptix.vercel.app";
+const SITE_URL = "https://www.synaptix.health";
 const ORG_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
 
@@ -20,7 +20,7 @@ export function OrganizationSchema() {
     parentOrganization: {
       "@type": "Organization",
       name: "Kronos Group",
-      url: "https://kronoshealth.co",
+      url: "https://www.kronosgroup.health",
     },
     contactPoint: {
       "@type": "ContactPoint",
@@ -28,7 +28,7 @@ export function OrganizationSchema() {
       contactType: "sales",
       availableLanguage: "English",
     },
-    sameAs: ["https://kronoshealth.co"],
+    sameAs: ["https://www.kronosgroup.health"],
   };
 
   return (

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbSchema } from "@/components";
 
-const SITE_URL = "https://synaptix.vercel.app";
+const SITE_URL = "https://www.synaptix.health";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
   return (
     <>
       <BreadcrumbSchema
-        items={[{ name: "Privacy Policy", url: "https://synaptix.vercel.app/privacy" }]}
+        items={[{ name: "Privacy Policy", url: "https://www.synaptix.health/privacy" }]}
       />
 
       <div className="min-h-dvh bg-[#0A0A0A] pt-24 pb-16">

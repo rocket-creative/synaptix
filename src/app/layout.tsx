@@ -25,7 +25,7 @@ const openSans = Open_Sans({
   display: "swap",
 });
 
-const SITE_URL = "https://synaptix.vercel.app";
+const SITE_URL = "https://www.synaptix.health";
 
 export const viewport: Viewport = {
   width: "device-width",

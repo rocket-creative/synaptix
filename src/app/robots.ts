@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://synaptix.vercel.app/sitemap.xml",
+    sitemap: "https://www.synaptix.health/sitemap.xml",
   };
 }

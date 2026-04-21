@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Neurosurgeons, orthopedic surgeons, and neurologists: license Synaptix and turn a single concussion visit into a 12-week program generating $2,500 to $10,000 per patient.",
   alternates: {
-    canonical: "https://synaptix.health/license-software",
+    canonical: "https://www.synaptix.health/license-software",
   },
   openGraph: {
     title: "License the Synaptix Concussion Program for Your Practice | Synaptix",
     description:
       "Turn a $250 concussion visit into a 12-week program worth $2,500 to $10,000 per patient. License Synaptix for your practice.",
-    url: "https://synaptix.health/license-software",
+    url: "https://www.synaptix.health/license-software",
     siteName: "Synaptix",
     type: "website",
   },
@@ -35,7 +35,7 @@ const TRUST_ITEMS = [
 export default function LicenseSoftwarePage() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "License Software", url: "https://synaptix.health/license-software" }]} />
+      <BreadcrumbSchema items={[{ name: "License Software", url: "https://www.synaptix.health/license-software" }]} />
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           {/* Left */}

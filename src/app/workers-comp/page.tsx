@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Synaptix provides documented concussion evaluations specifically designed for workers' compensation and no-fault auto claims. Defensible workups that hold up in proceedings.",
   alternates: {
-    canonical: "https://synaptix.health/workers-comp",
+    canonical: "https://www.synaptix.health/workers-comp",
   },
   openGraph: {
     title: "Workers' Comp & No-Fault Concussion Evaluation | Synaptix",
     description:
       "Documented concussion evaluations for workers' comp and no-fault claims. Defensible workups for insurance and legal proceedings.",
-    url: "https://synaptix.health/workers-comp",
+    url: "https://www.synaptix.health/workers-comp",
     siteName: "Synaptix",
     type: "website",
   },
@@ -35,7 +35,7 @@ const TRUST_ITEMS = [
 export default function WorkersCompPage() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "Workers' Comp", url: "https://synaptix.health/workers-comp" }]} />
+      <BreadcrumbSchema items={[{ name: "Workers' Comp", url: "https://www.synaptix.health/workers-comp" }]} />
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           {/* Left */}

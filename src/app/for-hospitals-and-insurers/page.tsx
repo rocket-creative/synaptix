@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     "Hospital systems and insurers: deploy a standardized, evidence-based concussion program across every facility or as a covered benefit for your members.",
   alternates: {
-    canonical: "https://synaptix.health/for-hospitals-and-insurers",
+    canonical: "https://www.synaptix.health/for-hospitals-and-insurers",
   },
   openGraph: {
     title: "Deploy Synaptix Across Your Health System or Insurer Network | Synaptix",
     description:
       "Standardized concussion programs for hospital systems and insurers. Deploy across every facility or as a covered member benefit.",
-    url: "https://synaptix.health/for-hospitals-and-insurers",
+    url: "https://www.synaptix.health/for-hospitals-and-insurers",
     siteName: "Synaptix",
     type: "website",
   },
@@ -35,7 +35,7 @@ const TRUST_ITEMS = [
 export default function ForHospitalsAndInsurersPage() {
   return (
     <>
-      <BreadcrumbSchema items={[{ name: "For Hospitals and Insurers", url: "https://synaptix.health/for-hospitals-and-insurers" }]} />
+      <BreadcrumbSchema items={[{ name: "For Hospitals and Insurers", url: "https://www.synaptix.health/for-hospitals-and-insurers" }]} />
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           {/* Left */}

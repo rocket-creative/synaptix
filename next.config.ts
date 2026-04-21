@@ -49,7 +49,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "synaptix.vercel.app",
+        hostname: "www.synaptix.health",
+      },
+      {
+        protocol: "https",
+        hostname: "synaptix.health",
       },
     ],
   },

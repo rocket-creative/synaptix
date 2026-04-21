@@ -19,9 +19,9 @@ const footerLinks = {
     { label: "For Hospitals & Insurers", href: "/for-hospitals-and-insurers" },
   ],
   company: [
-    { label: "Kronos Group", href: "https://kronos-health.vercel.app?utm_source=synaptix&utm_medium=footer" },
-    { label: "Cognifica App", href: "https://cognificaai.vercel.app?utm_source=synaptix&utm_medium=footer" },
-    { label: "Revenue Cycle", href: "https://kronos-health.vercel.app/revenue-cycle?utm_source=synaptix&utm_medium=footer" },
+    { label: "Kronos Group", href: "https://www.kronosgroup.health?utm_source=synaptix&utm_medium=footer" },
+    { label: "Cognifica App", href: "https://www.cognifica.app?utm_source=synaptix&utm_medium=footer" },
+    { label: "Revenue Cycle", href: "https://www.kronosrevenue.health?utm_source=synaptix&utm_medium=footer" },
     { label: "Contact", href: "#demo" },
   ],
   legal: [
@@ -142,7 +142,7 @@ export function Footer() {
             <p className="font-body text-xs text-white/40">
               © {currentYear} Synaptix. A{" "}
               <Link 
-                href="https://kronos-health.vercel.app?utm_source=synaptix&utm_medium=footer_copyright" 
+                href="https://www.kronosgroup.health?utm_source=synaptix&utm_medium=footer_copyright" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-[#0FBDD5]/70 hover:text-[#0FBDD5] transition-colors"
